@@ -6,7 +6,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <View>
-                <Text> Login Screen </Text>
+                <Text onPress={() => this.props.navigation.goBack()}> Login Screen </Text>
             </View>
         );
     }

@@ -4,11 +4,8 @@ import {
     Animated,
     Dimensions,
     StyleSheet,
-    Easing,
-    Text,
-    TouchableOpacity
+    Easing
 } from 'react-native';
-//import { Icon } from 'native-base';
 
 import * as logo from '../../../source/logo';
 
@@ -30,8 +27,7 @@ class Logo extends Component {
             marginTopL: new Animated.Value(-height - 1),
             marginTopI2: new Animated.Value(-height - 1),
             marginTopE2: new Animated.Value(-height - 1),
-            marginTopF: new Animated.Value(-height - 1),
-            faceAnim: new Animated.Value(0)
+            marginTopF: new Animated.Value(-height - 1)
         };
     }
 
@@ -40,90 +36,53 @@ class Logo extends Component {
     }
 
     renderLogo() {
-        Animated.stagger(5000, 
-            [
-            Animated.stagger(3000, [
-                Animated.parallel([
-                    Animated.stagger(300, [
-                        Animated.timing(
-                            this.state.marginTopM,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopO,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopN,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopE,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopY,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        )
-                    ]),
-                    Animated.stagger(300, [
-                        Animated.timing(
-                            this.state.marginTopL,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopI2,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopE2,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.marginTopF,
-                            {
-                                duration: 2000,
-                                toValue: 0,
-                                easing: Easing.bezier(0.075, 0.82, 0.165, 1)
-                            }
-                        )
-                    ])
+        Animated.stagger(3000, [
+            Animated.parallel([
+                Animated.stagger(300, [
+                    Animated.timing(
+                        this.state.marginTopM,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    ),
+                    Animated.timing(
+                        this.state.marginTopO,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    ),
+                    Animated.timing(
+                        this.state.marginTopN,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    ),
+                    Animated.timing(
+                        this.state.marginTopE,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    ),
+                    Animated.timing(
+                        this.state.marginTopY,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    )
                 ]),
-                Animated.parallel([
+                Animated.stagger(300, [
                     Animated.timing(
-                        this.state.marginTopI,
+                        this.state.marginTopL,
                         {
                             duration: 2000,
                             toValue: 0,
@@ -131,22 +90,49 @@ class Logo extends Component {
                         }
                     ),
                     Animated.timing(
-                        this.state.marginTopS,
+                        this.state.marginTopI2,
                         {
                             duration: 2000,
                             toValue: 0,
                             easing: Easing.bezier(0.075, 0.82, 0.165, 1)
                         }
                     ),
+                    Animated.timing(
+                        this.state.marginTopE2,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    ),
+                    Animated.timing(
+                        this.state.marginTopF,
+                        {
+                            duration: 2000,
+                            toValue: 0,
+                            easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                        }
+                    )
                 ])
-            ]), 
-            Animated.timing(
-                this.state.faceAnim,
-                {
-                    duration: 2000,
-                    toValue: 1,
-                }
-            )
+            ]),
+            Animated.parallel([
+                Animated.timing(
+                    this.state.marginTopI,
+                    {
+                        duration: 2000,
+                        toValue: 0,
+                        easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                    }
+                ),
+                Animated.timing(
+                    this.state.marginTopS,
+                    {
+                        duration: 2000,
+                        toValue: 0,
+                        easing: Easing.bezier(0.075, 0.82, 0.165, 1)
+                    }
+                ),
+            ])
         ]).start();
     }
 
@@ -170,14 +156,6 @@ class Logo extends Component {
                     <Animated.Image source={logo.F} style={{ marginTop: this.state.marginTopE2 }} />
                     <Animated.Image source={logo.E2} style={{ marginTop: this.state.marginTopF }} />
                 </View>
-                <Animated.View style={{ opacity: this.state.faceAnim }}>
-                    <TouchableOpacity style={styles.containerButton}>
-                        {/*<Icon name='logo-facebook' style={styles.iconButton} />*/}
-                        <Text style={styles.txtButton}>
-                            Đăng nhập bằng Facebook
-                        </Text>
-                    </TouchableOpacity>
-                </Animated.View>
             </View>
         );
     }
@@ -205,22 +183,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: width / 2
-    },
-    containerButton: {
-        padding: 10,
-        marginTop: 30,
-        borderRadius: 30,
-        backgroundColor: '#4267b2',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    iconButton: {
-        color: 'white'
-    },
-    txtButton: {
-        color: '#ffffff',
-        marginLeft: 5
     }
 });
 

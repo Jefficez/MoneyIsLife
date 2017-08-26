@@ -1,0 +1,7 @@
+const LOGINED = 'LOGINED123';
+const SAGA_LOGINED = 'SAGA_LOGINED123';
+
+export {
+    LOGINED,
+    SAGA_LOGINED
+};

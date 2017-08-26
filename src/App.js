@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import {
     View
 } from 'react-native';
+import { Provider } from 'react-redux';
 
-import RootNavigation from './router';
+import AppNavigation from './router/AppNavigation';
+import store from './redux/store';
 
 export default class MoneyIsLife extends Component {
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <RootNavigation />
-            </View>
+            <Provider store={store}>
+                <View style={{ flex: 1 }}>
+                    <AppNavigation />
+                </View>
+            </Provider>
         );
     }
 }
